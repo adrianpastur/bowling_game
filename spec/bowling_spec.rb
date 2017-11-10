@@ -1,15 +1,13 @@
 require 'bowling'
-describe 'players' do
+
   # before :each do
   #   bowling = Bowling.new ('Adrian')
   # end
-
+describe 'the game' do
   it 'has one player'do
   bowling = Bowling.new ('Adrian')
     expect(bowling.player).to eq('Adrian')
   end
-
-  it 'can have multiple players'
 end
 
 describe 'score' do
@@ -20,9 +18,7 @@ describe 'score' do
   it 'calculates total score'
   it 'handles spares'
   it 'handles strikes'
-  it 'can be saved' do
-
-  end
+  it 'can be saved'
 end
 
 describe 'user input' do
