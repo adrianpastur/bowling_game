@@ -1,9 +1,6 @@
 require 'pry'
-require 'active_support/all'
 
 class Bowling
-
-
   def initialize(player)
     @player = player
     @try_result = {try_1: 0, try_2: 0}
@@ -59,39 +56,6 @@ class Bowling
   end
 end
 
-  def last_round(try_result)
-    second_element = frame_record[counter-1]
-    if strike(try_result) == true
-      if second_element == 'X'
-        if strike_counter == 1
-          @total_score += 30
-          @strike_counter += 1
-        elsif strike_counter == 2
-          @total_score += 60
-        else
-          puts "error strike calculator"
-        end
-      elsif second_element == 'S'
-        @total_score += 20
-        @strike_counter += 1
-      elsif second_element < 10
-        @strike_counter += 1
-      else
-        puts "something went wrong strike calculator"
-      end
-    elsif spare(try_result) == true
-      spare_calculator(counter)
-      frame_record << 'S'
-      @counter +=1
-    elsif frame < 10
-      number_calculator(counter)
-      frame_record << frame
-      @counter +=1
-    else
-      puts "Please check your input and try again"
-    end
-  end
-
   def strike_calculator(counter)
     second_element = frame_record[counter-1]
     if second_element == 'X'
@@ -130,7 +94,6 @@ end
       puts "something went wrong spare calculator"
     end
   end
-
 
   def number_calculator(counter)
     second_element = frame_record[counter-1]
@@ -177,5 +140,4 @@ end
       return false
     end
   end
-
 end
